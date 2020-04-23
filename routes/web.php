@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Controller@index');
+Route::get('/template', 'Controller@getTemplate');
+Route::post('/form-submit', 'Controller@formSubmit');
+Route::post('/create-pdf', 'Controller@createPDF');
