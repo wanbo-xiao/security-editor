@@ -4,8 +4,8 @@
     <link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="create-pdf" method="post">
-    <textarea name="pdf-html" id="tinymce">
+<form action="create-pdf" method="post" id="tinymce-form" style="visibility: hidden">
+    <textarea name="pdf-html" id="tinymce" >
     @include('template')
     </textarea>
     <button type="submit" class="btn btn-primary"> Download PDF</button>
@@ -21,6 +21,11 @@
             auto_focus: "tinymce",
             height: "800",
             toolbar_mode: 'floating',
+            setup: function (ed) {
+                ed.on('init', function(args) {
+                    document.getElementById("tinymce-form").style.visibility = "visible";
+                });
+            }
         });
 </script>
 <style>

@@ -12,15 +12,24 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    /**
+     * Controller constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
         return View::make('index');
     }
 
+    /**
+     * @return mixed
+     */
     public function getTemplate()
     {
         $today = Carbon::today();
@@ -43,6 +52,10 @@ class Controller extends BaseController
         return View::make('template', compact('today', 'owner', 'approver', 'reviewer', 'interval', 'audience', 'name'));
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function formSubmit(Request $request)
     {
         $input = $request->all();
@@ -67,10 +80,13 @@ class Controller extends BaseController
         return View::make('editor', compact('today', 'owner', 'approver', 'reviewer', 'interval', 'audience', 'name'));
     }
 
+    /**
+     * @param Request $request
+     * @throws \Mpdf\MpdfException
+     */
     public function createPDF(Request $request)
     {
         $input = $request->all();
-
         $mpdf = new Mpdf();
         $mpdf->WriteHTML($input['pdf-html']);
         $mpdf->Output('doc.pdf', 'D');
