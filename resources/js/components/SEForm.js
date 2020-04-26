@@ -8,12 +8,12 @@ import Link from '@material-ui/core/Link';
 
 function SEForm() {
     return (
-        <form action="/form-submit" method="post" id="prefill-form">
+        <form action="form-submit" method="post" id="prefill-form">
             <Container maxWidth="sm">
                 <h1>Please pre-fill these data</h1>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
-                        <Link href="/template"> Document Example </Link>
+                        <Link href="template"> Document Example </Link>
                     </Grid>
                     <Grid item xs={12}>
                         <TextField label="Owner Name" name="owner_name"/>

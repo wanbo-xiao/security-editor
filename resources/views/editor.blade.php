@@ -4,7 +4,7 @@
     <link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="/create-pdf" method="post">
+<form action="create-pdf" method="post">
     <textarea name="pdf-html" id="tinymce">
     @include('template')
     </textarea>
