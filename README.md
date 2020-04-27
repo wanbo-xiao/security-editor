@@ -16,3 +16,4 @@ http://bobsyd.com/demo/security-editor/
 ## Todo
 1. A Dropdown list to select from multi template, with different form inputs
 1. Modern style of TinyMCE
+1. Form validation
